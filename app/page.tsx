@@ -77,8 +77,8 @@ export default function Home() {
   return (
     <main className="min-h-screen px-8 py-20">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-6xl font-bold text-center mb-8 uppercase text-raid-red">
-          Splosions
+        <h1 className="text-6xl font-bold text-center mb-4 uppercase text-raid-red">
+          Splosions!
         </h1>
 
         <div className="w-full max-w-2xl mx-auto">
@@ -86,18 +86,18 @@ export default function Home() {
             <ImageUpload onImageSelect={handleImageSelect} />
           ) : (
             <div className="space-y-6">
-              <div className="relative border-2 border-dashed rounded-lg p-12">
+              <div className="relative p-12">
                 {generatedImageUrl ? (
                   <img
                     src={generatedImageUrl}
                     alt="Generated Explosion"
-                    className="w-full h-full object-contain max-h-[400px]"
+                    className="w-full h-full object-contain max-h-[250px] sm:max-h-[350px] md:max-h-[450px] lg:max-h-[550px]"
                   />
                 ) : (
                   <img
                     src={URL.createObjectURL(selectedFile)}
                     alt="Selected"
-                    className="w-full h-full object-contain max-h-[400px]"
+                    className="w-full h-full object-contain max-h-[250px] sm:max-h-[350px] md:max-h-[450px] lg:max-h-[550px]"
                   />
                 )}
               </div>
@@ -114,7 +114,7 @@ export default function Home() {
                       disabled={isGenerating}
                       variant="outline"
                       size="lg"
-                      className="text-3xl h-16 px-8"
+                      className="text-3xl h-16 px-8 border-raid-dark"
                     >
                       🧨
                     </Button>
@@ -123,10 +123,10 @@ export default function Home() {
                     variant="outline"
                     onClick={handleClear}
                     size="lg"
-                    className="h-16 px-8"
+                    className="h-16 px-8 border-raid-dark"
                     disabled={isGenerating}
                   >
-                    <RotateCcw className="h-8 w-8" />
+                    <RotateCcw className="h-8 w-8 text-raid-red" />
                   </Button>
                 </div>
                 {isGenerating && (

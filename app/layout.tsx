@@ -26,7 +26,7 @@ export default function RootLayout({
         >
           {children}
           <footer className="fixed bottom-0 left-0 w-full h-[50px] bg-raid-dark text-raid-red flex items-center justify-end pr-8">
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 text-sm">
               <span>🖤</span>
               <span>from</span>
               <a
