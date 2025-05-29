@@ -1,0 +1,18 @@
+{
+  "accountAssociation": {
+    "header": "eyJmaWQiOjE0ODYyLCJ0eXBlIjoiY3VzdG9keSIsImtleSI6IjB4Yzg5MTM2MDhBZDdDZDJGODAyMjlmNGNGQjNFMTU4MjU0ODFGZDM5MyJ9",
+    "payload": "eyJkb21haW4iOiJjb2xvcnMucmFpZGd1aWxkLm9yZyJ9",
+    "signature": "MHg5OWEzODNiMzJmYTYxMjdhNmY5NDA0ZmNkMmE1ZTU0OWQ4OGQyYzdkZDUxOGU3YzJhNDY4M2Y0NDExZDFmMjI3MGM4YWU5Y2ZkM2NlNjM4NDRjY2JmOWZlZTEyNDJjNGE5MjIwNDMzMjdiOTZkNTNjMWEyMjRkY2M1NTIwMDJhZDFj"
+  },
+  "frame": {
+    "version": "1",
+    "name": "Raid Colors",
+    "iconUrl": "https://colors.raidguild.org/trumpet.svg",
+    "homeUrl": "https://colors.raidguild.org/",
+    "imageUrl": "https://colors.raidguild.org/swords.svg",
+    "buttonTitle": "Pick The Raid Color",
+    "splashImageUrl": "https://colors.raidguild.org/swords.svg",
+    "splashBackgroundColor": "#ff3864",
+    "webhookUrl": "https://colors.raidguild.org/api/webhook"
+  }
+}
