@@ -1,6 +1,6 @@
-import { useState } from 'react';
-import { Upload } from 'lucide-react';
-import { cn } from '@/lib/utils';
+import { useState } from "react";
+import { Upload } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 export type ImageUploadProps = {
   onImageSelect?: (file: File) => void;
@@ -10,7 +10,7 @@ export function ImageUpload({ onImageSelect }: ImageUploadProps) {
   const [isDragging, setIsDragging] = useState(false);
 
   const handleFileSelect = (file: File) => {
-    if (!file.type.startsWith('image/')) {
+    if (!file.type.startsWith("image/")) {
       return;
     }
     onImageSelect?.(file);
@@ -19,7 +19,7 @@ export function ImageUpload({ onImageSelect }: ImageUploadProps) {
   const handleDrop = (e: React.DragEvent) => {
     e.preventDefault();
     setIsDragging(false);
-    
+
     const file = e.dataTransfer.files[0];
     if (file) {
       handleFileSelect(file);
@@ -40,7 +40,7 @@ export function ImageUpload({ onImageSelect }: ImageUploadProps) {
     <div
       className={cn(
         "relative border-2 border-dashed rounded-lg p-12 transition-colors",
-        isDragging ? "border-primary bg-muted/50" : "border-muted-foreground/25",
+        isDragging ? "border-primary bg-muted/50" : "border-muted-foreground/25"
       )}
       onDrop={handleDrop}
       onDragOver={handleDragOver}
@@ -57,13 +57,11 @@ export function ImageUpload({ onImageSelect }: ImageUploadProps) {
           }
         }}
       />
-      
+
       <div className="text-center">
         <Upload className="w-12 h-12 mx-auto mb-4 text-muted-foreground" />
-        <p className="text-xl font-medium mb-2">Drop your image here</p>
-        <p className="text-sm text-muted-foreground">
-          or click
-        </p>
+        <p className="text-xl font-medium mb-2">Drop a pic here</p>
+        <p className="text-sm text-muted-foreground">or click and upload</p>
       </div>
     </div>
   );

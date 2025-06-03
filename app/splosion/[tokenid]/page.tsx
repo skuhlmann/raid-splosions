@@ -1,0 +1,50 @@
+import { Metadata } from "next";
+import TokenDetails from "@/components/TokenDetails";
+
+const appUrl = process.env.NEXT_PUBLIC_URL;
+
+type Props = {
+  params: Promise<{ tokenid: string }>;
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { tokenid } = await params;
+
+  const imageUrl = new URL(
+    `${process.env.NEXT_PUBLIC_URL}/api/splosion/${tokenid}}`
+  );
+
+  const frame = {
+    version: "next",
+    imageUrl: imageUrl.toString(),
+    button: {
+      title: "I blew somethiung up",
+      action: {
+        type: "launch_frame",
+        name: "Splosions",
+        url: `${appUrl}`,
+        iconImageUrl: `${appUrl}/fire_lamp.svg`,
+        splashImageUrl: `${appUrl}/swords.svg`,
+        splashBackgroundColor: "#000000",
+      },
+    },
+  };
+  return {
+    title: "Splosions",
+    openGraph: {
+      title: "Splosions",
+      description: "I blew something up",
+      images: [{ url: imageUrl.toString() }],
+    },
+    other: {
+      "fc:frame": JSON.stringify(frame),
+      "fc:frame:image": `${imageUrl.toString()}`,
+      "fc:frame:button:1": "Lite the fuse",
+    },
+  };
+}
+
+export default async function Page({ params }: Props) {
+  const { tokenid } = await params;
+  return <TokenDetails tokenid={tokenid} />;
+}
