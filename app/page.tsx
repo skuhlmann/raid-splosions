@@ -6,7 +6,7 @@ const appUrl = process.env.NEXT_PUBLIC_URL;
 export async function generateMetadata(): Promise<Metadata> {
   const frame = {
     version: "next",
-    imageUrl: `${appUrl}/opengraph-image`,
+    imageUrl: `${appUrl}/splash.png`,
     button: {
       title: "Light the fuse",
       action: {
@@ -21,6 +21,8 @@ export async function generateMetadata(): Promise<Metadata> {
   };
   return {
     title: "Splosions",
+    manifest: "/site.webmanifest",
+    description: "Light the fuse",
     openGraph: {
       title: "Splosions",
       description: "Light the fuse",
