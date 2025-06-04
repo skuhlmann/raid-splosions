@@ -184,7 +184,7 @@ export function MintButton({ generatedImageUrl, username }: MintButtonProps) {
                 tokenId ? `splosion/${parseInt(tokenId, 16).toString()}` : ""
               }
               buttonText="Cast Your Splosion"
-              text={`I lit the fuse @${username}`}
+              text={`I blew something up @${username}`}
             />
           </div>
           {tokenId && (
