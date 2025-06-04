@@ -7,12 +7,14 @@
   "frame": {
     "version": "1",
     "name": "SPLOSIONS",
-    "iconUrl": "https://splosions.raidguild.org/fire_lamp.svg",
+    "iconUrl": "https://splosions.raidguild.org/icon.png",
     "homeUrl": "https://splosions.raidguild.org/",
-    "imageUrl": "https://splosions.raidguild.org/swords.svg",
-    "buttonTitle": "Light the fuse",
-    "splashImageUrl": "https://splosions.raidguild.org/swords.svg",
-    "splashBackgroundColor": "#ff3864",
-    "webhookUrl": "https://splosions.raidguild.org/api/webhook"
+    "splashImageUrl": "https://splosions.raidguild.org/splash.png",
+    "splashBackgroundColor": "#000000",
+    "webhookUrl": "https://splosions.raidguild.org/api/webhook",
+    "subtitle": "Lite the Fuse!",
+    "description": "Blow something up and be a part of something.",
+    "primaryCategory": "art-creatvity",
+    "tags": ["explosions", "raidguild"]
   }
 }
