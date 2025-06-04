@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       action: {
         type: "launch_frame",
         name: "Splosions",
-        url: `${appUrl}`,
+        url: `${appUrl}/splosion/${tokenid}`,
         iconImageUrl: `${appUrl}/fire_lamp.svg`,
         splashImageUrl: `${appUrl}/swords.svg`,
         splashBackgroundColor: "#000000",
