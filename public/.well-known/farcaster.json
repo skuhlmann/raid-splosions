@@ -14,7 +14,7 @@
     "webhookUrl": "https://splosions.raidguild.org/api/webhook",
     "subtitle": "Lite the Fuse!",
     "description": "Blow something up and be a part of something.",
-    "primaryCategory": "art-creatvity",
+    "primaryCategory": "art-creativity",
     "tags": ["explosions", "raidguild"]
   }
 }
