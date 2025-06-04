@@ -10,13 +10,13 @@ type Props = {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { tokenid } = await params;
 
-  const imageUrl = new URL(
-    `${process.env.NEXT_PUBLIC_URL}/api/splosion/${tokenid}}`
-  );
+  // const imageUrl = new URL(
+  //   `${process.env.NEXT_PUBLIC_URL}/api/splosion/${tokenid}}`
+  // );
 
   const frame = {
     version: "next",
-    imageUrl: imageUrl.toString(),
+    imageUrl: `${process.env.NEXT_PUBLIC_URL}/api/splosion/${tokenid}}`,
     button: {
       title: "I blew somethiung up",
       action: {
@@ -34,11 +34,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title: "Splosions",
       description: "I blew something up",
-      images: [{ url: imageUrl.toString() }],
+      images: [
+        { url: `${process.env.NEXT_PUBLIC_URL}/api/splosion/${tokenid}}` },
+      ],
     },
     other: {
       "fc:frame": JSON.stringify(frame),
-      "fc:frame:image": `${imageUrl.toString()}`,
+      "fc:frame:image": `${`${process.env.NEXT_PUBLIC_URL}/api/splosion/${tokenid}}`}`,
       "fc:frame:button:1": "Lite the fuse",
     },
   };

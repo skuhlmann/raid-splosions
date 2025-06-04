@@ -7,6 +7,8 @@ import { base, sepolia } from "viem/chains";
 
 import abi from "../../../../lib/abis/erc721.json";
 import { CONTRACT_ADDRESS, TARGET_CHAIN } from "@/lib/constants";
+import { pinata } from "@/lib/pinata";
+import { neynarClient } from "@/lib/neynar";
 
 // Force dynamic rendering to ensure fresh image generation on each request
 export const dynamic = "force-dynamic";
@@ -62,12 +64,28 @@ export async function GET(
 
   let image =
     "https://daohaus.mypinata.cloud/ipfs/bafybeieauz7y6j7vpsvkgh4ggsbr6acmb76bxczfoomai3tvohh5diavoi";
+  let preImage =
+    "https://daohaus.mypinata.cloud/ipfs/bafkreicdmon4xt25l2lio6p3b2y4wq6qfjuxrketam7i2rz2c2qg53z2jm";
 
   if (decodedData && decodedData.image) {
     const hash = decodedData.image.split("//")[1];
     console.log("hash", hash);
     if (hash) {
       image = `https://daohaus.mypinata.cloud/ipfs/${hash}`;
+    }
+
+    const username =
+      decodedData?.attributes[0] && decodedData?.attributes[0].value;
+
+    if (username) {
+      const data = await neynarClient.searchUser({
+        q: username,
+        limit: parseInt("1"),
+      });
+
+      if (data.result.users) {
+        preImage = data.result.users[0].pfp_url || preImage;
+      }
     }
   }
 
@@ -100,6 +118,16 @@ export async function GET(
             }}
           >
             <div style={{ display: "flex" }}>
+              <img
+                src={preImage}
+                alt="presplosion"
+                style={{
+                  width: "600",
+                  height: "600",
+                  borderRadius: "100%",
+                }}
+              />
+
               <img
                 src={image}
                 alt="splosion"
