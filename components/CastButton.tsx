@@ -22,7 +22,7 @@ export default function CastButton({
     if (isMiniApp) {
       try {
         await frameSDK.actions.composeCast({
-          text: text || "I lit the fuse",
+          text: text || "I blew something up",
           embeds: [`${BASE_URL}/${routePath}`],
         });
       } catch (error) {

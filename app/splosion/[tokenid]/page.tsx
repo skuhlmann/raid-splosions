@@ -16,9 +16,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const frame = {
     version: "next",
-    imageUrl: `${process.env.NEXT_PUBLIC_URL}/api/splosion/${tokenid}}`,
+    imageUrl: `${process.env.NEXT_PUBLIC_URL}/api/splosion/${tokenid}`,
     button: {
-      title: "I blew somethiung up",
+      title: "I blew something up",
       action: {
         type: "launch_frame",
         name: "Splosions",
@@ -35,12 +35,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: "Splosions",
       description: "I blew something up",
       images: [
-        { url: `${process.env.NEXT_PUBLIC_URL}/api/splosion/${tokenid}}` },
+        { url: `${process.env.NEXT_PUBLIC_URL}/api/splosion/${tokenid}` },
       ],
     },
     other: {
       "fc:frame": JSON.stringify(frame),
-      "fc:frame:image": `${`${process.env.NEXT_PUBLIC_URL}/api/splosion/${tokenid}}`}`,
+      "fc:frame:image": `${`${process.env.NEXT_PUBLIC_URL}/api/splosion/${tokenid}`}`,
       "fc:frame:button:1": "Lite the fuse",
     },
   };

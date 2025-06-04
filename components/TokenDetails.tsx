@@ -108,7 +108,7 @@ export default function TokenDetails({ tokenid }: TokenDetailsProps) {
           buttonText="Cast"
           text={
             tokenData.attributes &&
-            `I lit the fuse @${tokenData.attributes[0].value}`
+            `I blew something up @${tokenData.attributes[0].value}`
           }
         />
         <Link href="/" className="text-xs text-raid-red hover:underline">
