@@ -129,7 +129,7 @@ export default function Splosion() {
       }
     } catch (err) {
       console.error("Generation error:", err);
-      setError("IT WAS A DUD! OpenAI doesn't want to blow this up :(.");
+      setError("IT WAS A DUD! OpenAI doesn't want to blow this up.");
     } finally {
       setIsGenerating(false);
     }
