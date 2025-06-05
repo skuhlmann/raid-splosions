@@ -102,18 +102,19 @@ export default function TokenDetails({ tokenid }: TokenDetailsProps) {
         )}
       </div>
 
-      <div className="flex flex-col gap-2 items-center">
+      <div className="flex flex-col gap-4 items-center">
+        <Link href="/" className="text-2xl text-raid-red mb-4 hover:underline">
+          splode something else →
+        </Link>
+
         <CastButton
           routePath={`/splosion/${tokenid}`}
-          buttonText="Cast"
+          buttonText="Cast This One"
           text={
             tokenData.attributes &&
-            `I blew something up @${tokenData.attributes[0].value}`
+            `Look what blew up @${tokenData.attributes[0].value}`
           }
         />
-        <Link href="/" className="text-xs text-raid-red hover:underline">
-          splode something
-        </Link>
       </div>
     </div>
   );

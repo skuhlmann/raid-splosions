@@ -9,6 +9,7 @@ import { ConfettiExplosion } from "react-confetti-explosion";
 import { Input } from "@/components/ui/input";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useFrameSDK } from "./providers/frame-provider";
+import { sdk } from "@farcaster/frame-sdk";
 
 // Add keyframes for explosion animation
 const explosionAnimation = `
@@ -122,6 +123,7 @@ export default function Splosion() {
       setImageDescription(data.description);
       setGeneratedImageUrl(data.url);
       setShowConfetti(true);
+      await sdk.haptics.impactOccurred("heavy");
     } catch (err) {
       console.error("Generation error:", err);
       setError("IT WAS A DUD! OpenAI doesn't want to blow this up :(.");
