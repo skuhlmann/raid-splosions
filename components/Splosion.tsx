@@ -123,7 +123,10 @@ export default function Splosion() {
       setImageDescription(data.description);
       setGeneratedImageUrl(data.url);
       setShowConfetti(true);
-      await sdk.haptics.impactOccurred("heavy");
+      const capabilities = await sdk.getCapabilities();
+      if (capabilities.includes("haptics.impactOccurred")) {
+        await sdk.haptics.impactOccurred("heavy");
+      }
     } catch (err) {
       console.error("Generation error:", err);
       setError("IT WAS A DUD! OpenAI doesn't want to blow this up :(.");
