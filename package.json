@@ -10,6 +10,7 @@
     "tunnel": "cloudflared tunnel --url http://localhost:3000"
   },
   "dependencies": {
+    "@farcaster/frame-sdk": "^0.0.57",
     "@farcaster/frame-wagmi-connector": "^0.0.42",
     "@hookform/resolvers": "^3.9.0",
     "@next/swc-wasm-nodejs": "13.5.1",
